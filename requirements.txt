@@ -1,0 +1,6 @@
+# Core Dependencies
+streamlit==1.28.1
+groq==0.4.1
+
+# Optional Dependencies
+python-dotenv==1.0.0
