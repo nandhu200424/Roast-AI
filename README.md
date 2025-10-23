@@ -57,11 +57,6 @@ source venv/bin/activate
 # Start the app
 streamlit run app.py
 ```
-
-### 4. Access the Application
-
-URL : https://nandhu200424-roast-ai-app-b8sos5.streamlit.app/
-
 ##  Documentation
 
 - **[DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)** - Complete deployment instructions for production
@@ -96,14 +91,6 @@ The app includes several customizable elements:
 - **Customizable Intensity**: Control how savage the AI gets
 - **Mobile Responsive**: Works on all devices
 
-##  How to Use
-
-1. **Start the app**: Run `streamlit run app.py`
-2. **Open your browser**: Go to `http://localhost:8501`
-3. **Adjust settings**: Use the sidebar to control roast intensity
-4. **Start chatting**: Type anything and get roasted!
-5. **Track stats**: Monitor your roasting sessions in real-time
-
 ##  Example Interactions
 
 Try these examples to see Limitly in action:
@@ -128,3 +115,5 @@ This project is open source and available under the MIT License.
 ##  Have Fun!
 
 Remember, this is all in good fun! The roasts are meant to be humorous and light-hearted. Enjoy getting roasted! 😈🔥💀
+## Deployed link ##
+Link : https://nandhu200424-roast-ai-app-b8sos5.streamlit.app/
