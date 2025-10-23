@@ -1,6 +1,6 @@
 # Core Dependencies
 streamlit>=1.29.0
-groq>=0.9.0
+groq>=0.11.0
 
 # Optional Dependencies
 python-dotenv==1.0.0
