@@ -144,22 +144,44 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ============================================================
-# INITIALIZE GROQ CLIENT
+# INITIALIZE GROQ CLIENT - FIXED VERSION
 # ============================================================
-@st.cache_resource
-def get_groq_client():
-    api_key = st.secrets.get("GROQ_API_KEY", "")
-    if not api_key:
-        st.error("⚠️ GROQ_API_KEY not found in secrets!")
-        st.stop()
+def init_groq_client():
+    """Initialize Groq client with proper error handling"""
     try:
-        # Initialize Groq client with just the API key
-        return Groq(api_key=api_key)
+        # Check if API key exists in secrets
+        if "GROQ_API_KEY" not in st.secrets:
+            st.error("⚠️ GROQ_API_KEY not found in Streamlit secrets!")
+            st.info("Please add your Groq API key in Settings → Secrets")
+            st.stop()
+        
+        api_key = st.secrets["GROQ_API_KEY"]
+        
+        # Validate API key format
+        if not api_key or not isinstance(api_key, str):
+            st.error("❌ Invalid API key format")
+            st.stop()
+        
+        if not api_key.startswith("gsk_"):
+            st.error("❌ API key should start with 'gsk_'")
+            st.stop()
+        
+        # Initialize Groq client
+        client = Groq(api_key=api_key)
+        
+        return client
+        
     except Exception as e:
-        st.error(f"Error initializing Groq client: {str(e)}")
+        st.error(f"❌ Error initializing Groq: {str(e)}")
+        st.info("Please verify your API key at https://console.groq.com/keys")
         st.stop()
 
-client = get_groq_client()
+# Initialize client
+try:
+    client = init_groq_client()
+except Exception as e:
+    st.error(f"Failed to initialize client: {e}")
+    st.stop()
 
 # ============================================================
 # SYSTEM PROMPT
@@ -193,7 +215,7 @@ Examples of your tone:
 Be savage. Be funny. Make them laugh while crying."""
 
 # ============================================================
-# ROAST FUNCTION
+# ROAST FUNCTION - IMPROVED ERROR HANDLING
 # ============================================================
 def get_roast(user_message):
     """Get roast response from Groq API"""
@@ -208,8 +230,19 @@ def get_roast(user_message):
             max_tokens=150,
         )
         return response.choices[0].message.content
+        
     except Exception as e:
-        return f"Error: {str(e)}"
+        error_str = str(e).lower()
+        
+        # Handle specific error types
+        if "401" in error_str or "unauthorized" in error_str or "invalid" in error_str:
+            return "❌ **API Key Error**: Your Groq API key is invalid or expired. Please create a new one at https://console.groq.com/keys and update your Streamlit secrets."
+        elif "429" in error_str or "rate limit" in error_str:
+            return "⚠️ **Rate Limit**: Too many requests. Please wait a moment and try again."
+        elif "503" in error_str or "service unavailable" in error_str:
+            return "⚠️ **Service Unavailable**: Groq API is temporarily down. Please try again in a few moments."
+        else:
+            return f"❌ **Error**: {str(e)}\n\nPlease check your API key and try again."
 
 # ============================================================
 # INITIALIZE SESSION STATE
