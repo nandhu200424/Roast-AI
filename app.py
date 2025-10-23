@@ -301,6 +301,7 @@ with st.sidebar:
     
     st.markdown("---")
     
+    
     # Stats section
     st.subheader("📊 Roast Stats")
     total_roasts = len([msg for msg in st.session_state.messages if msg["role"] == "assistant"])
