@@ -1,8 +1,8 @@
-# 🔥 Limitly - Roast AI
+#  Limitly - Roast AI
 
 A savage AI-powered chatbot that destroys everything you say with brutal honesty and dark humor. Built with Streamlit frontend and Groq API integration.
 
-## 🚀 Features
+##  Features
 
 - **AI-Powered Roasts**: Uses Groq API with Llama 3.3 70B to generate savage roasts
 - **Interactive Web Interface**: Beautiful Streamlit frontend with animated doodles
@@ -27,7 +27,7 @@ roast-ai/
 └── DEPLOYMENT_GUIDE.md    # Complete deployment instructions
 ```
 
-## 🛠️ Quick Start
+##  Quick Start
 
 ### 1. Install Dependencies
 
@@ -63,12 +63,12 @@ streamlit run app.py
 - **App URL**: http://localhost:8501
 - **Network URL**: http://192.168.0.12:8501
 
-## 📚 Documentation
+##  Documentation
 
 - **[DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)** - Complete deployment instructions for production
 - **[system_prompt.txt](system_prompt.txt)** - AI roast prompt and guidelines
 
-## 🔧 Configuration
+##  Configuration
 
 ### Groq API Integration
 
@@ -89,7 +89,7 @@ The app includes several customizable elements:
 - **Custom Styling**: Gradient backgrounds and professional design
 - **Live Statistics**: Real-time tracking of roasts and messages
 
-## 🎯 Features
+##  Features
 
 - **Real-time Chat**: Instant responses with custom styling
 - **Interactive UI**: Animated elements and smooth transitions
@@ -97,7 +97,7 @@ The app includes several customizable elements:
 - **Customizable Intensity**: Control how savage the AI gets
 - **Mobile Responsive**: Works on all devices
 
-## 🎮 How to Use
+##  How to Use
 
 1. **Start the app**: Run `streamlit run app.py`
 2. **Open your browser**: Go to `http://localhost:8501`
@@ -105,7 +105,7 @@ The app includes several customizable elements:
 4. **Start chatting**: Type anything and get roasted!
 5. **Track stats**: Monitor your roasting sessions in real-time
 
-## 🔥 Example Interactions
+##  Example Interactions
 
 Try these examples to see Limitly in action:
 - "I'm amazing at everything"
@@ -114,7 +114,7 @@ Try these examples to see Limitly in action:
 - "I didn't do anything today"
 - "I'm the best at coding"
 
-## 🤝 Contributing
+##  Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -126,6 +126,6 @@ Try these examples to see Limitly in action:
 
 This project is open source and available under the MIT License.
 
-## 🔥 Have Fun!
+##  Have Fun!
 
 Remember, this is all in good fun! The roasts are meant to be humorous and light-hearted. Enjoy getting roasted! 😈🔥💀
