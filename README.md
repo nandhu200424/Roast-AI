@@ -60,8 +60,7 @@ streamlit run app.py
 
 ### 4. Access the Application
 
-- **App URL**: http://localhost:8501
-- **Network URL**: http://192.168.0.12:8501
+URL : https://nandhu200424-roast-ai-app-b8sos5.streamlit.app/
 
 ##  Documentation
 
